@@ -9,12 +9,10 @@ def pascal_triangle(n: int) -> List[List[int]]:
     n: no of rows
     return list of list of int
     """
-    res = [[1]]
-    if n == 0:
+
+    if n <= 0:
         return [[]]
-    elif n == 1:
-        return res
-    
+    res = [[1]]
     for i in range((n-1)):
         temp = [0] + res[-1] + [0]
         row = []
