@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """Pascal triangle module"""
-from typing import List
 
 
-def pascal_triangle(n: int) -> List[List[int]]:
+def pascal_triangle(n):
     """Fn to generate pascal traingle
     Args:
     n: no of rows
@@ -11,7 +10,7 @@ def pascal_triangle(n: int) -> List[List[int]]:
     """
 
     if n <= 0:
-        return [[]]
+        return []
     res = [[1]]
     for i in range((n-1)):
         temp = [0] + res[-1] + [0]
