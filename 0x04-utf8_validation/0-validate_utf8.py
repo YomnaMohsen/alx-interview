@@ -23,8 +23,3 @@ def validUTF8(data: List[int]) -> bool:
             else:
                 return False
     return n_bytes == 0
-
-
-
-data =   [467, 133, 108]
-print(validUTF8(data))
