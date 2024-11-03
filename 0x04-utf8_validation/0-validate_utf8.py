@@ -10,16 +10,21 @@ def validUTF8(data: List[int]) -> bool:
         if n_bytes > 0:
             if value >> 6 != 0b10:
                 return False
-            num_of_bytes -= 1
+            n_bytes -= 1
         else:
             if value >> 7 == 0:
-                num_of_bytes = 0
+                n_bytes = 0
             elif value >> 5 == 0b110:
-                num_of_bytes = 1
+                n_bytes = 1
             elif value >> 4 == 0b1110:
-                num_of_bytes = 2
+                n_bytes = 2
             elif value >> 3 == 0b11110:
-                num_of_bytes = 3
+                n_bytes = 3
             else:
                 return False
-        return num_of_bytes == 0
+    return n_bytes == 0
+
+
+
+data =   [467, 133, 108]
+print(validUTF8(data))
