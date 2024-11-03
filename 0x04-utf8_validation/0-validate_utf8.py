@@ -7,6 +7,7 @@ def validUTF8(data: List[int]) -> bool:
     """validates utf8 encoding"""
     n_bytes = 0
     for value in data:
+        value = value & 0xFF
         if n_bytes > 0:
             if value >> 6 != 0b10:
                 return False
@@ -23,3 +24,7 @@ def validUTF8(data: List[int]) -> bool:
             else:
                 return False
     return n_bytes == 0
+
+
+data =  [240, 188, 128, 167]
+print(validUTF8(data))
