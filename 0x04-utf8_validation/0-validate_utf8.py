@@ -5,6 +5,7 @@ from typing import List
 
 def validUTF8(data: List[int]) -> bool:
     """validates utf8 encoding"""
+
     n_bytes = 0
     for value in data:
         value = value & 0xFF
