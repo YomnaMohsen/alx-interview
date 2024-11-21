@@ -9,8 +9,8 @@ def isWinner(x, nums):
     return name of winner or none
     """
 
-    maria = False
-    ben = False
+    maria = 0
+    ben = 0
 
     def SieveOfEratosthenes(n):
         """fine prime numbers in list up to n"""
@@ -31,13 +31,11 @@ def isWinner(x, nums):
     for round in nums:
         round_list = [i for i in range(round + 1) if prime_list[i]]
         if (len(round_list) % 2 == 0):
-            ben = True
-            maria = False
+            ben += 1
         else:
-            maria = True
-            ben = False
-    if maria:
+            maria += 1
+    if maria > ben:
         return "Maria"
-    if ben:
+    if ben > maria:
         return "Ben"
     return None
