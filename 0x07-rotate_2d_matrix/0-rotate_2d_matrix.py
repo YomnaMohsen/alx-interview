@@ -11,9 +11,3 @@ def rotate_2d_matrix(matrix):
 
     for row in matrix:
         row.reverse()
-matrix = [[1, 2, 3],
-              [4, 5, 6],
-              [7, 8, 9]]
-
-rotate_2d_matrix(matrix)
-print(matrix)    
