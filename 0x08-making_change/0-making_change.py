@@ -12,14 +12,13 @@ def makeChange(coins: List[int], total: int) -> int:
     coins.sort(reverse=True)
 
     for c in coins:
-        if target < total:
+        while target < total:
             target += c
             steps += 1
 
         if target == total:
             return steps
-
-        else:
-            target -= c
-            steps -= 1
+   
+        target -= c
+        steps -= 1
     return -1
