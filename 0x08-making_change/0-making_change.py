@@ -18,7 +18,7 @@ def makeChange(coins: List[int], total: int) -> int:
 
         if target == total:
             return steps
-   
+
         target -= c
         steps -= 1
     return -1
