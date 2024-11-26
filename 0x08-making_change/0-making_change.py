@@ -8,11 +8,18 @@ def makeChange(coins: List[int], total: int) -> int:
     needed to meet a given amount total"""
     if total <= 0:
         return 0
-    dp = [total + 1] * (total + 1)
-    dp[0] = 0
+    target, steps = 0, 0
+    coins.sort(reverse=True)
 
-    for a in range(1, total + 1):
-        for c in coins:
-            if a - c >= 0:
-                dp[a] = min(dp[a], 1 + dp[a-c])
-    return dp[total] if dp[total] != total + 1 else -1
+    for c in coins:
+        if target < total:
+            target += c
+            steps += 1
+
+        if target == total:
+            return steps
+
+        else:
+            target -= c
+            steps -= 1
+    return -1
