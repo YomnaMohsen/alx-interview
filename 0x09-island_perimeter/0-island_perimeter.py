@@ -4,7 +4,7 @@ from typing import List
 
 
 # need more trace
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid):
     """return island perimeter"""
     visit = set()
     for i in range(len(grid)):
