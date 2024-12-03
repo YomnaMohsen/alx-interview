@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """Island preimeter module"""
-from typing import List
 
 
-# need more trace
 def island_perimeter(grid):
     """return island perimeter"""
     visit = set()
