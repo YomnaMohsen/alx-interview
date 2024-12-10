@@ -40,5 +40,3 @@ def isWinner(x, nums):
     elif ben > maria:
         return "Ben"
     return None
-
-print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
