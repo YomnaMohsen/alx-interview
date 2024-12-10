@@ -18,7 +18,7 @@ def isWinner(x, nums):
         prime = [True for i in range(n+1)]
         p = 2
         while p * p <= n:
-            if prime[p] == True:
+            if prime[p]:
                 for i in range(p * p, n+1, p):
                     prime[i] = False
             p += 1
@@ -30,7 +30,6 @@ def isWinner(x, nums):
     prime_list = SieveOfEratosthenes(max_num)
 
     for j in range(x):
-   # for round in nums:
         round_list = [i for i in range(nums[j] + 1) if prime_list[i]]
         if len(round_list) % 2 == 0:
             ben += 1
