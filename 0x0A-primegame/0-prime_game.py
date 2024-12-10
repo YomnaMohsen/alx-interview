@@ -8,7 +8,8 @@ def isWinner(x, nums):
     nums: array of ints of size x
     return name of winner or none
     """
-
+    if x is None or nums is None or x == 0 or nums == []:
+        return None
     maria = 0
     ben = 0
 
@@ -39,3 +40,5 @@ def isWinner(x, nums):
     elif ben > maria:
         return "Ben"
     return None
+
+print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
