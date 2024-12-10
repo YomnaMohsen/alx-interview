@@ -13,11 +13,11 @@ def isWinner(x, nums):
     ben = 0
 
     def SieveOfEratosthenes(n):
-        """fine prime numbers in list up to n"""
+        """find prime numbers in list up to n"""
         prime = [True for i in range(n+1)]
         p = 2
-        while (p * p <= n):
-            if prime[p]:
+        while p * p <= n:
+            if prime[p] == True:
                 for i in range(p * p, n+1, p):
                     prime[i] = False
             p += 1
@@ -30,12 +30,12 @@ def isWinner(x, nums):
 
     for round in nums:
         round_list = [i for i in range(round + 1) if prime_list[i]]
-        if (len(round_list) % 2 == 0):
+        if len(round_list) % 2 == 0:
             ben += 1
         else:
             maria += 1
     if maria > ben:
         return "Maria"
-    if ben > maria:
+    elif ben > maria:
         return "Ben"
     return None
