@@ -29,8 +29,9 @@ def isWinner(x, nums):
     max_num = max(nums)
     prime_list = SieveOfEratosthenes(max_num)
 
-    for round in nums:
-        round_list = [i for i in range(round + 1) if prime_list[i]]
+    for j in range(x):
+   # for round in nums:
+        round_list = [i for i in range(nums[j] + 1) if prime_list[i]]
         if len(round_list) % 2 == 0:
             ben += 1
         else:
